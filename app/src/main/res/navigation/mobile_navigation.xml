@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_speak">
+
+    <fragment
+        android:id="@+id/navigation_speak"
+        android:name="com.example.iwaifu.ui.speak.SpeakFragment"
+        android:label="@string/title_speak"
+        tools:layout="@layout/fragment_speak" >
+        <action
+            android:id="@+id/action_navigation_speak_to_navigation_characters"
+            app:destination="@id/navigation_characters"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_characters"
+        android:name="com.example.iwaifu.ui.characters.CharactersFragment"
+        android:label="@string/title_characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_navigation_characters_to_navigation_speak"
+            app:destination="@id/navigation_speak"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+</navigation>
